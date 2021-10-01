@@ -14,7 +14,7 @@
     <AssemblyVersion>1.0.0</AssemblyVersion>
     <PackageProjectUrl>https://github.com/Cotecna-Inspection/Domain.Core</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/Cotecna-Inspection/Domain.Core/LICENSE</PackageLicenseUrl>
-    <PackageReleaseNotes>https://github.com/Cotecna-Inspection/DomainCore/changelog.md</PackageReleaseNotes>
+    <PackageReleaseNotes>https://github.com/Cotecna-Inspection/Domain.Core/changelog.md</PackageReleaseNotes>
     <RepositoryUrl>https://github.com/Cotecna-Inspection/Domain.Core.git</RepositoryUrl>
     <RepositoryType>GIT</RepositoryType>
     <PackageTags>Utilities;Helpers;Common;Core;DDD;Domain</PackageTags>
