@@ -1,15 +1,17 @@
 ﻿using System;
 
-namespace Cotecna.OpenSource.Domain.Core
+namespace Cotecna.Domain.Core
 {
     public interface ApplicationMediator
     {
+
         /// <summary>
         /// Defines a mediator to encapsulate command and querys.
         /// Represents <see cref="IApplicationMediator"/> Injectable Service Interface
         /// </summary>
         public interface IApplicationMediator
         {
+
             /// <summary>
             /// Manage comand objects
             /// </summary>
@@ -27,11 +29,14 @@ namespace Cotecna.OpenSource.Domain.Core
             T Dispatch<T>(IQuery<T> query);
         }
 
+
+
         /// <summary>
         /// Defines a instance of IApplicationMediator <see cref="IApplicationMediator"/> 
         /// </summary>
         public sealed class ApplicationMediator : IApplicationMediator
         {
+
             private readonly IServiceProvider _provider;
 
             /// <summary>
@@ -43,7 +48,7 @@ namespace Cotecna.OpenSource.Domain.Core
                 _provider = provider;
             }
 
-           
+
             public bool Dispatch(ICommand command)
             {
                 Type type = typeof(ICommandHandler<>);
@@ -67,6 +72,7 @@ namespace Cotecna.OpenSource.Domain.Core
 
                 return result;
             }
+
         }
     }
 }

@@ -1,9 +1,12 @@
-﻿namespace Cotecna.OpenSource.Domain
+﻿namespace Cotecna.Domain.Core
 {
+
     /// <summary>
     /// Represents <see cref="ICommand"/> Injectable Service Interface
     /// </summary>
     public interface ICommand { }
+
+
 
     /// <summary>
     /// Defines a handler for a command
@@ -20,4 +23,5 @@
         /// <returns>If command has been handled correctly</returns>
         bool Handle(TCommand command);
     }
+
 }

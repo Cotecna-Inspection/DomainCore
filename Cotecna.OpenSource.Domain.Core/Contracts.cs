@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace Cotecna.OpenSource.Domain.Core
+namespace Cotecna.Domain.Core
 {
+
     /// <summary>
     /// Defines a contract about an invariant that has to be complied
     /// </summary>
@@ -28,9 +29,7 @@ namespace Cotecna.OpenSource.Domain.Core
             /// <summary>
             /// Custom exception constructor to raise for a contract invariant not met
             /// </summary>
-            public ContractException()
-            {
-            }
+            public ContractException() { }
 
             /// <summary>
             /// Custom exception constructor to raise for a contract invariant not met
@@ -38,8 +37,7 @@ namespace Cotecna.OpenSource.Domain.Core
             /// <param name="message">Message about the invariant not met</param>
             public ContractException(string message)
                 : base(message)
-            {
-            }
+            { }
 
             /// <summary>
             /// Custom exception constructor to raise for a contract invariant not met
@@ -48,13 +46,12 @@ namespace Cotecna.OpenSource.Domain.Core
             /// <param name="inner">Inner exception</param>
             public ContractException(string message, Exception inner)
                 : base(message, inner)
-            {
-            }
+            { }
 
             protected ContractException(SerializationInfo info, StreamingContext context)
                 : base(info, context)
-            {
-            }
+            { }
+
         }
     }
 }

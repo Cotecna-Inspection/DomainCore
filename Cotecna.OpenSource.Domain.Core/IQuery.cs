@@ -1,12 +1,13 @@
-﻿namespace Cotecna.OpenSource.Domain.Core
+﻿namespace Cotecna.Domain.Core
 {
+
     /// <summary>
     /// Represents <see cref="IQuery"/> Injectable Service Interface
     /// </summary>
     /// <typeparam name="TResult">Result type</typeparam>
-    public interface IQuery<TResult>
-    {
-    }
+    public interface IQuery<TResult> { }
+
+
 
     /// <summary>
     /// Defines a handler for a query
@@ -24,4 +25,5 @@
          /// <returns>Result from the request</returns>
         TResult Handle(TQuery query);
     }
+
 }
