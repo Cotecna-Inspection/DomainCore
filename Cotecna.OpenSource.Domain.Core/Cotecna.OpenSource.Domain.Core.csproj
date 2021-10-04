@@ -5,19 +5,24 @@
     <PackageId>Cotecna.Domain.Core</PackageId>
     <RootNamespace>Cotecna.Domain.Core</RootNamespace>
     <Description>Common requirements for .NET projects at Domain layer</Description>
-    <Copyright>Cotecna Inspection</Copyright>
-    <Authors>IT Product and Innovation</Authors>
+    <Copyright>Cotecna Inspection (c) 2021</Copyright>
+    <Authors>Cotecna Inspection</Authors>
     <Company>Cotecna Inspection</Company>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
     <Version>1.0.0</Version>
     <FileVersion>1.0.0</FileVersion>
     <AssemblyVersion>1.0.0</AssemblyVersion>
-    <PackageProjectUrl>https://github.com/Cotecna-Inspection/Domain.Core</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/Cotecna-Inspection/Domain.Core/LICENSE</PackageLicenseUrl>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/Cotecna-Inspection/Domain.Core</PackageProjectUrl>    
     <PackageReleaseNotes>https://github.com/Cotecna-Inspection/Domain.Core/changelog.md</PackageReleaseNotes>
     <RepositoryUrl>https://github.com/Cotecna-Inspection/Domain.Core.git</RepositoryUrl>
     <RepositoryType>GIT</RepositoryType>
     <PackageTags>Utilities;Helpers;Common;Core;DDD;Domain</PackageTags>
   </PropertyGroup>
 
+
+  <ItemGroup>
+    <None Include="..\LICENSE" Pack="true" PackagePath=""/>
+  </ItemGroup>
+  
 </Project>

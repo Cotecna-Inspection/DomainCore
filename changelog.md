@@ -9,5 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.0] - 2021-10-04
 ### Added
-- XX
-- YY
+- ICommand and IQuery interfaces
+- Command and Query Handlers
+- Mediator Pattern
+- Contracts Helper and ContractException
