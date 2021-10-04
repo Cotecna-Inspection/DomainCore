@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>netcoreapp3.1;net5.0</TargetFrameworks>
     <PackageId>Cotecna.Domain.Core</PackageId>
+    <AssemblyName>Cotecna.Domain.Core</AssemblyName>
     <RootNamespace>Cotecna.Domain.Core</RootNamespace>
     <Description>Common requirements for .NET projects at Domain layer</Description>
     <Copyright>Cotecna Inspection (c) 2021</Copyright>
@@ -17,12 +18,12 @@
     <PackageReleaseNotes>https://github.com/Cotecna-Inspection/Domain.Core/changelog.md</PackageReleaseNotes>
     <RepositoryUrl>https://github.com/Cotecna-Inspection/Domain.Core.git</RepositoryUrl>
     <RepositoryType>GIT</RepositoryType>
-    <PackageTags>Utilities;Helpers;Common;Core;DDD;Domain</PackageTags>
+    <PackageTags>Utilities;Helpers;Common;Core;DDD;Domain</PackageTags>    
   </PropertyGroup>
 
 
   <ItemGroup>
-    <None Include="..\LICENSE" Pack="true" PackagePath=""/>
+    <None Include="..\LICENSE" Pack="true" PackagePath="" />
   </ItemGroup>
   
 </Project>
