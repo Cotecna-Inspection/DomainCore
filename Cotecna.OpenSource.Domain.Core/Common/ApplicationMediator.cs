@@ -10,8 +10,20 @@ namespace Cotecna.OpenSource.Domain.Core
         /// </summary>
         public interface IApplicationMediator
         {
+            /// <summary>
+            /// Manage comand objects
+            /// </summary>
+            /// <typeparam name="ICommand"> <see cref="ICommand"/></typeparam>
+            /// <param name="command">Command object to be dispatched</param>
+            /// <returns>Returns boolean if Command was correctly dispatched</returns>
             bool Dispatch(ICommand command);
 
+            /// <summary>
+            /// Manage comand objects
+            /// </summary>
+            /// <typeparam name="IQuery"> <see cref="IQuery"/></typeparam>
+            /// <param name="query">Query object to be dispatched</param>
+            /// <returns>Result object</returns>
             T Dispatch<T>(IQuery<T> query);
         }
 
@@ -31,12 +43,7 @@ namespace Cotecna.OpenSource.Domain.Core
                 _provider = provider;
             }
 
-            /// <summary>
-            /// Manage comand objects
-            /// </summary>
-            /// <typeparam name="ICommand"> <see cref="ICommand"/></typeparam>
-            /// <param name="command">Command object to be dispatched</param>
-            /// <returns>Returns boolean if Command was correctly dispatched</returns>
+           
             public bool Dispatch(ICommand command)
             {
                 Type type = typeof(ICommandHandler<>);
@@ -48,12 +55,7 @@ namespace Cotecna.OpenSource.Domain.Core
 
                 return flag;
             }
-            /// <summary>
-            /// Manage comand objects
-            /// </summary>
-            /// <typeparam name="IQuery"> <see cref="IQuery"/></typeparam>
-            /// <param name="query">Query object to be dispatched</param>
-            /// <returns>Result object</returns>
+            
             public T Dispatch<T>(IQuery<T> query)
             {
                 Type type = typeof(IQueryHandler<,>);
