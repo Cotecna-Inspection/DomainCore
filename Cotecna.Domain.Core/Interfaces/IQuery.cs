@@ -1,4 +1,4 @@
-﻿namespace Cotecna.Domain.Core
+﻿namespace Cotecna.Domain.Core.Interfaces
 {
 
     /// <summary>

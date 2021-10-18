@@ -1,15 +1,19 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Cotecna.Domain.Core.Interfaces;
+
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Cotecna.Domain.Core
 {
+    /// <summary>
+    /// Represents <see cref="IServiceCollectionExtensions"/> defining as a container for Services added through Dependency Injection.
+    /// </summary>
     public static class IServiceCollectionExtensions
     {
-
         /// <summary>
-        /// Add ApplicationMediator to the current DI container
+        /// Add ApplicationMediator to the current Dependency Injection container
         /// </summary>
-        /// <param name="services">Services DIC</param>
-        /// <returns>Same Services DIC</returns>
+        /// <param name="services">Services Dependency Injection Container</param>
+        /// <returns>Same Services Dependency Injection Container</returns>
         public static IServiceCollection AddMediator(this IServiceCollection services)
         {
             services.AddTransient<IApplicationMediator, ApplicationMediator>();
@@ -18,10 +22,10 @@ namespace Cotecna.Domain.Core
         }
 
         /// <summary>
-        /// Add a new Command Handler with the specified Command to the current DI container, easing configuration and promoting fluent syntax
+        /// Add a new Command Handler with the specified Command to the current Dependency Injection Container, easing configuration and promoting fluent syntax
         /// </summary>
-        /// <param name="services">Services DIC</param>
-        /// <returns>Same Services DIC</returns>
+        /// <param name="services">Services Dependency Injection Container</param>
+        /// <returns>Same Services Dependency Injection Container</returns>
         public static IServiceCollection AddHandler<TCommand, THandler>(this IServiceCollection services)
             where THandler : class, ICommandHandler<TCommand>
             where TCommand : ICommand
@@ -32,10 +36,10 @@ namespace Cotecna.Domain.Core
         }
 
         /// <summary>
-        /// Add a new Query Handler with the specified Query to the current DI container, easing configuration and promoting fluent syntax
+        /// Add a new Query Handler with the specified Query to the current Dependency Injection Container, easing configuration and promoting fluent syntax
         /// </summary>
-        /// <param name="services">Services DIC</param>
-        /// <returns>Same Services DIC</returns>
+        /// <param name="services">ServicesDependency Injection Container</param>
+        /// <returns>Same Services Dependency Injection Container</returns>
         public static IServiceCollection AddHandler<TQuery, THandler, TResult>(this IServiceCollection services)
             where THandler : class, IQueryHandler<TQuery, TResult>
             where TQuery : IQuery<TResult>
@@ -44,6 +48,5 @@ namespace Cotecna.Domain.Core
 
             return services;
         }
-
     }
 }
