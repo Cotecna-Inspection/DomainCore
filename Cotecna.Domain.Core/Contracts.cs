@@ -9,6 +9,7 @@ namespace Cotecna.Domain.Core
     /// </summary>
     public static class Contracts
     {
+
         /// <summary>
         /// Specify the requireness of an invariant condition to be met
         /// </summary>
@@ -20,12 +21,15 @@ namespace Cotecna.Domain.Core
                 throw new ContractException(message);
         }
 
+
+
         /// <summary>
         /// Custom exception for a contract invariant that has not been complied
         /// </summary>
         [Serializable]
         public class ContractException : Exception
         {
+
             /// <summary>
             /// Custom exception constructor to raise for a contract invariant not met
             /// </summary>

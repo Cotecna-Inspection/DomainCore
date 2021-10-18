@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cotecna.Domain.Core", "Cotecna.Domain.Core\Cotecna.Domain.Core.csproj", "{7553CE0A-7545-40A8-8A13-D9C873F932F2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cotecna.Domain.Core.Configuration", "Cotecna.Domain.Core.Configuration\Cotecna.Domain.Core.Configuration.csproj", "{14E6FAE8-1967-4953-AD1E-4BA300C00421}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{7553CE0A-7545-40A8-8A13-D9C873F932F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7553CE0A-7545-40A8-8A13-D9C873F932F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7553CE0A-7545-40A8-8A13-D9C873F932F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14E6FAE8-1967-4953-AD1E-4BA300C00421}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14E6FAE8-1967-4953-AD1E-4BA300C00421}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14E6FAE8-1967-4953-AD1E-4BA300C00421}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14E6FAE8-1967-4953-AD1E-4BA300C00421}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
