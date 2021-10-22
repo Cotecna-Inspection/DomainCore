@@ -1,8 +1,9 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using System.Threading.Tasks;
 
 namespace Cotecna.Domain.Core
 {
-    public static class IServiceCollectionExtensions
+    public static class ServiceCollectionExtensions
     {
 
         /// <summary>
@@ -32,6 +33,20 @@ namespace Cotecna.Domain.Core
         }
 
         /// <summary>
+        /// Add a new Asynchronous Command Handler with the specified Command to the current DI container, easing configuration and promoting fluent syntax
+        /// </summary>
+        /// <param name="services">Services DIC</param>
+        /// <returns>Same Services DIC</returns>
+        public static IServiceCollection AddAsyncHandler<TCommand, THandler>(this IServiceCollection services)
+            where THandler : class, IAsyncCommandHandler<TCommand>
+            where TCommand : ICommand
+        {
+            services.AddTransient<IAsyncCommandHandler<TCommand>, THandler>();
+
+            return services;
+        }
+
+        /// <summary>
         /// Add a new Query Handler with the specified Query to the current DI container, easing configuration and promoting fluent syntax
         /// </summary>
         /// <param name="services">Services DIC</param>
@@ -41,6 +56,20 @@ namespace Cotecna.Domain.Core
             where TQuery : IQuery<TResult>
         {
             services.AddTransient<IQueryHandler<TQuery, TResult>, THandler>();
+
+            return services;
+        }
+
+        /// <summary>
+        /// Add a new Asynchronous Query Handler with the specified Query to the current DI container, easing configuration and promoting fluent syntax
+        /// </summary>
+        /// <param name="services">Services DIC</param>
+        /// <returns>Same Services DIC</returns>
+        public static IServiceCollection AddAsyncHandler<TQuery, THandler, TResult>(this IServiceCollection services)
+            where THandler : class, IAsyncQueryHandler<TQuery, TResult>
+            where TQuery : IQuery<TResult>
+        {
+            services.AddTransient<IAsyncQueryHandler<TQuery, TResult>, THandler>();
 
             return services;
         }
