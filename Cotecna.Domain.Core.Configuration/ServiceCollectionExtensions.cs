@@ -25,7 +25,7 @@ namespace Cotecna.Domain.Core
         /// <returns>Same Services DIC</returns>
         public static IServiceCollection AddHandler<TCommand, THandler>(this IServiceCollection services)
             where THandler : class, ICommandHandler<TCommand>
-            where TCommand : ICommand
+            where TCommand : Command
         {
             services.AddTransient<ICommandHandler<TCommand>, THandler>();
 
@@ -39,7 +39,7 @@ namespace Cotecna.Domain.Core
         /// <returns>Same Services DIC</returns>
         public static IServiceCollection AddAsyncHandler<TCommand, THandler>(this IServiceCollection services)
             where THandler : class, IAsyncCommandHandler<TCommand>
-            where TCommand : ICommand
+            where TCommand : Command
         {
             services.AddTransient<IAsyncCommandHandler<TCommand>, THandler>();
 
@@ -53,7 +53,7 @@ namespace Cotecna.Domain.Core
         /// <returns>Same Services DIC</returns>
         public static IServiceCollection AddHandler<TQuery, THandler, TResult>(this IServiceCollection services)
             where THandler : class, IQueryHandler<TQuery, TResult>
-            where TQuery : IQuery<TResult>
+            where TQuery : Query<TResult>
         {
             services.AddTransient<IQueryHandler<TQuery, TResult>, THandler>();
 
@@ -67,7 +67,7 @@ namespace Cotecna.Domain.Core
         /// <returns>Same Services DIC</returns>
         public static IServiceCollection AddAsyncHandler<TQuery, THandler, TResult>(this IServiceCollection services)
             where THandler : class, IAsyncQueryHandler<TQuery, TResult>
-            where TQuery : IQuery<TResult>
+            where TQuery : Query<TResult>
         {
             services.AddTransient<IAsyncQueryHandler<TQuery, TResult>, THandler>();
 

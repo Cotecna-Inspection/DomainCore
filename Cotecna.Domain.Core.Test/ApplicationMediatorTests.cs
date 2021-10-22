@@ -14,8 +14,8 @@ namespace Cotecna.Domain.Core.Test
 
             services
                 .AddMediator()
-                .AddHandler<Command, CommandHandler>()
-                .AddAsyncHandler<AsyncCommand, AsyncCommandHandler>()
+                .AddHandler<TestCommand, CommandHandler>()
+                .AddAsyncHandler<AsyncTestCommand, AsyncCommandHandler>()
                 .AddHandler<Query, QueryHandler, string>()
                 .AddAsyncHandler<AsyncQuery, AsyncQueryHandler, string>();
 
@@ -30,7 +30,7 @@ namespace Cotecna.Domain.Core.Test
         {
 
             // Arrange
-            var command = new Command { Test = "Test of command" };
+            var command = new TestCommand { Test = "Test of command" };
 
             // Act
             mediator.Dispatch(command);
@@ -44,7 +44,7 @@ namespace Cotecna.Domain.Core.Test
         {
 
             // Arrange
-            var command = new AsyncCommand { Test = "Test of asynchronous command" };
+            var command = new AsyncTestCommand { Test = "Test of asynchronous command" };
 
             // Act
             await mediator.DispatchAsync(command);

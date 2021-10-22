@@ -2,14 +2,14 @@
 
 namespace Cotecna.Domain.Core.Test
 {
-    public class Command : ICommand
+    public class TestCommand : Command
     {
         public string Test { get; set; }
     }
 
-    public class CommandHandler : ICommandHandler<Command>
+    public class CommandHandler : ICommandHandler<TestCommand>
     {
-        public void Handle(Command command)
+        public void Handle(TestCommand command)
         {
             TestResult = command.Test;
         }
@@ -17,9 +17,9 @@ namespace Cotecna.Domain.Core.Test
         public static string TestResult { get; set; }
     }
 
-    public class AsyncCommandHandler : IAsyncCommandHandler<AsyncCommand>
+    public class AsyncCommandHandler : IAsyncCommandHandler<AsyncTestCommand>
     {
-        public async Task HandleAsync(AsyncCommand command)
+        public async Task HandleAsync(AsyncTestCommand command)
         {
             await Task.Delay(2);
             TestResult = command.Test;
@@ -28,7 +28,7 @@ namespace Cotecna.Domain.Core.Test
         public static string TestResult { get; set; }
     }
 
-    public class AsyncCommand : ICommand
+    public class AsyncTestCommand : Command
     {
         public string Test { get; set; }
     }
