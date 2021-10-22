@@ -2,7 +2,7 @@
 
 namespace Cotecna.Domain.Core.Test
 {
-    public class Query : IQuery<string>
+    public class Query : Query<string>
     {
         public string Test { get; set; }
     }
@@ -15,7 +15,7 @@ namespace Cotecna.Domain.Core.Test
         }
     }
 
-    public class AsyncQuery : IQuery<string>
+    public class AsyncQuery : Query<string>
     {
         public string Test { get; set; }
     }

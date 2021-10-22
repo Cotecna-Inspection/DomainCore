@@ -8,7 +8,7 @@ namespace Cotecna.Domain.Core
     /// </summary>
     /// <typeparam name="TCommand">The type of command object being handled</typeparam>
     public interface IAsyncCommandHandler<TCommand>
-        where TCommand : ICommand
+        where TCommand : Command
     {
         /// <summary>
         /// Handles a Command asynchronously

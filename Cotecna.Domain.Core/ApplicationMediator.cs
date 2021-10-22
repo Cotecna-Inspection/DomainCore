@@ -12,32 +12,32 @@ namespace Cotecna.Domain.Core
         /// <summary>
         /// Manage command objects
         /// </summary>
-        /// <typeparam name="ICommand"> <see cref="ICommand"/></typeparam>
+        /// <typeparam name="Command"> <see cref="Command"/></typeparam>
         /// <param name="command">Command object to be dispatched</param>
-        void Dispatch(ICommand command);
+        void Dispatch(Command command);
 
         /// <summary>
         /// Manage command objects asynchronously
         /// </summary>
-        /// <typeparam name="ICommand"> <see cref="ICommand"/></typeparam>
+        /// <typeparam name="Command"> <see cref="Command"/></typeparam>
         /// <param name="command">Command object to be dispatched</param>
-        Task DispatchAsync(ICommand command);
+        Task DispatchAsync(Command command);
 
         /// <summary>
         /// Manage query objects
         /// </summary>
-        /// <typeparam name="IQuery"> <see cref="IQuery"/></typeparam>
+        /// <typeparam name="Query"> <see cref="Query"/></typeparam>
         /// <param name="query">Query object to be dispatched</param>
         /// <returns>Result object</returns>
-        T Dispatch<T>(IQuery<T> query);
+        T Dispatch<T>(Query<T> query);
 
         /// <summary>
         /// Manage query objects asynchronously
         /// </summary>
-        /// <typeparam name="IQuery"> <see cref="IQuery"/></typeparam>
+        /// <typeparam name="Query"> <see cref="Query"/></typeparam>
         /// <param name="query">Query object to be dispatched</param>
         /// <returns>Result object</returns>
-        Task<T> DispatchAsync<T>(IQuery<T> query);
+        Task<T> DispatchAsync<T>(Query<T> query);
     }
 
 
@@ -60,7 +60,7 @@ namespace Cotecna.Domain.Core
         }
 
 
-        public void Dispatch(ICommand command)
+        public void Dispatch(Command command)
         {
             Type type = typeof(ICommandHandler<>);
             Type[] typeArgs = { command.GetType() };
@@ -70,7 +70,7 @@ namespace Cotecna.Domain.Core
             handler.Handle((dynamic)command);
         }
 
-        public async Task DispatchAsync(ICommand command)
+        public async Task DispatchAsync(Command command)
         {
             Type type = typeof(IAsyncCommandHandler<>);
             Type[] typeArgs = { command.GetType() };
@@ -80,7 +80,7 @@ namespace Cotecna.Domain.Core
             await handler.HandleAsync((dynamic)command);
         }
 
-        public T Dispatch<T>(IQuery<T> query)
+        public T Dispatch<T>(Query<T> query)
         {
             Type type = typeof(IQueryHandler<,>);
             Type[] typeArgs = { query.GetType(), typeof(T) };
@@ -92,7 +92,7 @@ namespace Cotecna.Domain.Core
             return result;
         }
 
-        public async Task<T> DispatchAsync<T>(IQuery<T> query)
+        public async Task<T> DispatchAsync<T>(Query<T> query)
         {
             Type type = typeof(IAsyncQueryHandler<,>);
             Type[] typeArgs = { query.GetType(), typeof(T) };
