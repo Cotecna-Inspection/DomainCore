@@ -1,7 +1,5 @@
-﻿using Cotecna.Domain.Core.Interfaces;
-
+﻿
 using Microsoft.Extensions.DependencyInjection;
-using System.Threading.Tasks;
 
 namespace Cotecna.Domain.Core
 {

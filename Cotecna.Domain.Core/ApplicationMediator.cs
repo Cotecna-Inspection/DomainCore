@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-using Cotecna.Domain.Core.Interfaces;
-
 namespace Cotecna.Domain.Core
 {
     /// <summary>
@@ -18,15 +16,31 @@ namespace Cotecna.Domain.Core
         /// <typeparam name="ICommand"> <see cref="ICommand"/></typeparam>
         /// <param name="command">Command object to be dispatched</param>
         /// <returns>Returns boolean if Command was correctly dispatched</returns>
-        bool Dispatch(ICommand command);
+        void Dispatch(Command command);
+
+        /// <summary>
+        /// Manage command objects asynchronously
+        /// </summary>
+        /// <typeparam name="Command"> <see cref="Command"/></typeparam>
+        /// <param name="command">Command object to be dispatched</param>
+        Task DispatchAsync(Command command);
+
 
         /// <summary>
         /// Manage comand objects
         /// </summary>
-        /// <typeparam name="IQuery"> <see cref="IQuery"/></typeparam>
+        /// <typeparam name="IQuery"> <see cref="Query{T}"/></typeparam>
         /// <param name="query">Query object to be dispatched</param>
         /// <returns>Result object</returns>
-        T Dispatch<T>(IQuery<T> query);
+        T Dispatch<T>(Query<T> query);
+
+        /// <summary>
+        /// Manage query objects asynchronously
+        /// </summary>
+        /// <typeparam name="Query"> <see cref="Query{T}"/></typeparam>
+        /// <param name="query">Query object to be dispatched</param>
+        /// <returns>Result object</returns>
+        Task<T> DispatchAsync<T>(Query<T> query);
     }
 
 
