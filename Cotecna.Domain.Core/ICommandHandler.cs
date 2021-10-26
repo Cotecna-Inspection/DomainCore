@@ -1,17 +1,17 @@
 ﻿namespace Cotecna.Domain.Core
 {
     /// <summary>
-    /// Defines a handler for a command
-    /// Represents <see cref="ICommandHandler"/> Injectable Service Interface
+    /// Defines a Synchronous Handler for Commands.
+    /// Represents <see cref="ICommandHandler{TCommand}"/> Injectable Service Interface
     /// </summary>
-    /// <typeparam name="TCommand">The type of command object being handled</typeparam>
+    /// <typeparam name="TCommand">Type of the command being handled</typeparam>
     public interface ICommandHandler<TCommand>
         where TCommand : Command
     {
         /// <summary>
-        /// Handles a Command
+        /// Handles a <see cref="TCommand"/> Synchronously
         /// </summary>
-        /// <param name="command">The command object to be handled</param>
+        /// <param name="command">The <see cref="TCommand"/> to be handled</param>
         void Handle(TCommand command);
     }
 }

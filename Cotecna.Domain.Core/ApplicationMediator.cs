@@ -4,46 +4,44 @@ using System.Threading.Tasks;
 namespace Cotecna.Domain.Core
 {
     /// <summary>
-    /// Defines a mediator to encapsulate command and querys.
+    /// Defines a mediator to encapsulate <see cref="Command"/> and <see cref="Query{T}"/> objects.
     /// Represents <see cref="IApplicationMediator"/> Injectable Service Interface
     /// </summary>
     public interface IApplicationMediator
     {
+
         /// <summary>
-        /// Manage command objects
+        /// Dispatches <see cref="Command"/> objects Synchronously
         /// </summary>
-        /// <typeparam name="Command"> <see cref="Command"/></typeparam>
-        /// <param name="command">Command object to be dispatched</param>
+        /// <param name="command"><see cref="Command"/> object to be dispatched</param>
         void Dispatch(Command command);
 
         /// <summary>
-        /// Manage command objects asynchronously
+        /// Dispatches <see cref="Command"/> objects Asynchronously
         /// </summary>
-        /// <typeparam name="Command"> <see cref="Command"/></typeparam>
-        /// <param name="command">Command object to be dispatched</param>
+        /// <param name="command"><see cref="Command"/> object to be dispatched</param>
         Task DispatchAsync(Command command);
 
+
         /// <summary>
-        /// Manage query objects
+        /// Dispatches <see cref="Query{T}"/> objects Synchronously
         /// </summary>
-        /// <typeparam name="Query"> <see cref="Query"/></typeparam>
-        /// <param name="query">Query object to be dispatched</param>
-        /// <returns>Result object</returns>
+        /// <param name="query"> <see cref="Query{T}"/> object to be dispatched</param>
+        /// <returns>Result <see cref="{T}"/> object</returns>
         T Dispatch<T>(Query<T> query);
 
         /// <summary>
-        /// Manage query objects asynchronously
+        /// Dispatches <see cref="Query{T}"/> objects Asynchronously
         /// </summary>
-        /// <typeparam name="Query"> <see cref="Query"/></typeparam>
-        /// <param name="query">Query object to be dispatched</param>
-        /// <returns>Result object</returns>
+        /// <param name="query"> <see cref="Query{T}"/> object to be dispatched</param>
+        /// <returns>Result <see cref="Task{T}"/> object</returns>
         Task<T> DispatchAsync<T>(Query<T> query);
     }
 
 
 
     /// <summary>
-    /// Defines a instance of IApplicationMediator <see cref="IApplicationMediator"/> 
+    /// Defines an instance of <see cref="ApplicationMediator"/>. Implements <see cref="IApplicationMediator"/>
     /// </summary>
     public sealed class ApplicationMediator : IApplicationMediator
     {
