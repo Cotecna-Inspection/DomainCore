@@ -10,7 +10,7 @@
     <Authors>Cotecna Inspection</Authors>
     <Company>Cotecna Inspection</Company>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
-    <Version>1.0.0-beta.1</Version>
+    <Version>1.0.0-beta.3</Version>
     <FileVersion>1.0.0</FileVersion>
     <AssemblyVersion>1.0.0</AssemblyVersion>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>

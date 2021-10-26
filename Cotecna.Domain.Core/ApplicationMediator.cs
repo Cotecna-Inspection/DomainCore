@@ -1,11 +1,38 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 using Cotecna.Domain.Core.Interfaces;
 
 namespace Cotecna.Domain.Core
 {
     /// <summary>
-    /// Defines a instance of <see cref="ApplicationMediator"/>. Implements <see cref="IApplicationMediator"/> 
+    /// Defines a mediator to encapsulate command and querys.
+    /// Represents <see cref="IApplicationMediator"/> Injectable Service Interface
+    /// </summary>
+    public interface IApplicationMediator
+    {
+
+        /// <summary>
+        /// Manage comand objects
+        /// </summary>
+        /// <typeparam name="ICommand"> <see cref="ICommand"/></typeparam>
+        /// <param name="command">Command object to be dispatched</param>
+        /// <returns>Returns boolean if Command was correctly dispatched</returns>
+        bool Dispatch(ICommand command);
+
+        /// <summary>
+        /// Manage comand objects
+        /// </summary>
+        /// <typeparam name="IQuery"> <see cref="IQuery"/></typeparam>
+        /// <param name="query">Query object to be dispatched</param>
+        /// <returns>Result object</returns>
+        T Dispatch<T>(IQuery<T> query);
+    }
+
+
+
+    /// <summary>
+    /// Defines a instance of IApplicationMediator <see cref="IApplicationMediator"/> 
     /// </summary>
     public sealed class ApplicationMediator : IApplicationMediator
     {
@@ -21,19 +48,28 @@ namespace Cotecna.Domain.Core
             _provider = provider;
         }
 
-        public bool Dispatch(ICommand command)
+
+        public void Dispatch(Command command)
         {
             Type type = typeof(ICommandHandler<>);
             Type[] typeArgs = { command.GetType() };
             Type handlerType = type.MakeGenericType(typeArgs);
 
             dynamic handler = _provider.GetService(handlerType);
-            bool flag = handler.Handle((dynamic)command);
-
-            return flag;
+            handler.Handle((dynamic)command);
         }
 
-        public T Dispatch<T>(IQuery<T> query)
+        public async Task DispatchAsync(Command command)
+        {
+            Type type = typeof(IAsyncCommandHandler<>);
+            Type[] typeArgs = { command.GetType() };
+            Type handlerType = type.MakeGenericType(typeArgs);
+
+            dynamic handler = _provider.GetService(handlerType);
+            await handler.HandleAsync((dynamic)command);
+        }
+
+        public T Dispatch<T>(Query<T> query)
         {
             Type type = typeof(IQueryHandler<,>);
             Type[] typeArgs = { query.GetType(), typeof(T) };
@@ -44,5 +80,18 @@ namespace Cotecna.Domain.Core
 
             return result;
         }
+
+        public async Task<T> DispatchAsync<T>(Query<T> query)
+        {
+            Type type = typeof(IAsyncQueryHandler<,>);
+            Type[] typeArgs = { query.GetType(), typeof(T) };
+            Type handlerType = type.MakeGenericType(typeArgs);
+
+            dynamic handler = _provider.GetService(handlerType);
+            T result = await handler.HandleAsync((dynamic)query);
+
+            return result;
+        }
+
     }
 }
