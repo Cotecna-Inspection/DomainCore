@@ -3,17 +3,17 @@
 namespace Cotecna.Domain.Core
 {
     /// <summary>
-    /// Defines a handler for a command
-    /// Represents <see cref="IAsyncCommandHandler"/> Injectable Service Interface
+    /// Defines an Asynchronous Handler for Commands
+    /// Represents <see cref="IAsyncCommandHandler{TCommand}"/> Injectable Service Interface
     /// </summary>
     /// <typeparam name="TCommand">The type of command object being handled</typeparam>
     public interface IAsyncCommandHandler<TCommand>
         where TCommand : Command
     {
         /// <summary>
-        /// Handles a Command asynchronously
+        /// Handles a <see cref="TCommand"/> Asynchronously
         /// </summary>
-        /// <param name="command">The command object to be handled</param>
+        /// <param name="command">The <see cref="TCommand"/> to be handled</param>
         Task HandleAsync(TCommand command);
     }
 

@@ -37,8 +37,8 @@ namespace Cotecna.Domain.Core
         /// <summary>
         /// Add a new Asynchronous Command Handler with the specified Command to the current DI container, easing configuration and promoting fluent syntax
         /// </summary>
-        /// <param name="services">Services DIC</param>
-        /// <returns>Same Services DIC</returns>
+        /// <param name="services">Services Dependency Injection Container</param>
+        /// <returns>Same Services Dependency Injection Container</returns>
         public static IServiceCollection AddAsyncHandler<TCommand, THandler>(this IServiceCollection services)
             where THandler : class, IAsyncCommandHandler<TCommand>
             where TCommand : Command
@@ -65,8 +65,8 @@ namespace Cotecna.Domain.Core
         /// <summary>
         /// Add a new Asynchronous Query Handler with the specified Query to the current DI container, easing configuration and promoting fluent syntax
         /// </summary>
-        /// <param name="services">Services DIC</param>
-        /// <returns>Same Services DIC</returns>
+        /// <param name="services">Services Dependency Injection Container</param>
+        /// <returns>Same Services Dependency Injection Container</returns>
         public static IServiceCollection AddAsyncHandler<TQuery, THandler, TResult>(this IServiceCollection services)
             where THandler : class, IAsyncQueryHandler<TQuery, TResult>
             where TQuery : Query<TResult>

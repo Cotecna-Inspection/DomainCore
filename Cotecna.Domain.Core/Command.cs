@@ -2,7 +2,7 @@
 {
 
     /// <summary>
-    /// Represents <see cref="Command"/>
+    /// Represents a <see cref="Command"/>
     /// </summary>
     public abstract class Command { }
 

@@ -2,8 +2,8 @@
 {
 
     /// <summary>
-    /// Defines a handler for a query
-    /// Represents <see cref="IQueryHandler"/> Injectable Service Interface
+    /// Defines a Synchronous Handler for Queries.
+    /// Represents <see cref="IQueryHandler{TQuery,TResult}"/> Injectable Service Interface
     /// </summary>
     /// <typeparam name="TQuery">The type of query object being handled</typeparam>
     /// <typeparam name="TResult">The type of result object from the handler</typeparam>
@@ -11,10 +11,10 @@
         where TQuery : Query<TResult>
     {
         /// <summary>
-        /// Handles a Query
+        /// Handles a <see cref="TQuery"/> Synchronously
         /// </summary>
-        /// <param name="query">The query</param>
-        /// <returns>Result from the request</returns>
+        /// <param name="query">The <see cref="TQuery"/> to be handled</param>
+        /// <returns>Result of the <see cref="TQuery"/></returns>
         TResult Handle(TQuery query);
     }
 
