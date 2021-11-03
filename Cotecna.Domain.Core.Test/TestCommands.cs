@@ -25,6 +25,13 @@ namespace Cotecna.Domain.Core.Test
             TestResult = command.Test;
         }
 
+        public async Task<T> HandleAsync<T>(AsyncTestCommand command)
+        {
+            await Task.Delay(2);
+            TestResult = command.Test;
+            return default;
+        }
+
         public static string TestResult { get; set; }
     }
 

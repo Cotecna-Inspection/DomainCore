@@ -15,6 +15,13 @@ namespace Cotecna.Domain.Core
         /// </summary>
         /// <param name="command">The <see cref="TCommand"/> to be handled</param>
         Task HandleAsync(TCommand command);
+
+        /// <summary>
+        /// Handles a <see cref="TCommand"/> Asynchronously
+        /// </summary>
+        /// <param name="command">The <see cref="TCommand"/> to be handled</param>
+        /// <returns>Result <see cref="Task{T}"/> object</returns>
+        Task<T> HandleAsync<T>(TCommand command);
     }
 
 }
