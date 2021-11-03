@@ -36,8 +36,14 @@ namespace Cotecna.Domain.Core
         /// <param name="query"> <see cref="Query{T}"/> object to be dispatched</param>
         /// <returns>Result <see cref="Task{T}"/> object</returns>
         Task<T> DispatchAsync<T>(Query<T> query);
-    }
 
+        /// <summary>
+        /// Dispatches <see cref="Command"/> objects Synchronously
+        /// </summary>
+        /// <param name="command"><see cref="Command"/> object to be dispatched</param>
+        /// <returns>Result <see cref="Task{T}"/> object</returns>
+        Task<T> DispatchAsync<T>(Command command);
+    }
 
 
     /// <summary>
@@ -102,5 +108,14 @@ namespace Cotecna.Domain.Core
             return result;
         }
 
+        public async Task<T> DispatchAsync<T>(Command command)
+        {
+            Type type = typeof(IAsyncCommandHandler<>);
+            Type[] typeArgs = { command.GetType() };
+            Type handlerType = type.MakeGenericType(typeArgs);
+
+            dynamic handler = _provider.GetService(handlerType);
+            return await handler.HandleAsync<T>((dynamic)command);
+        }
     }
 }
