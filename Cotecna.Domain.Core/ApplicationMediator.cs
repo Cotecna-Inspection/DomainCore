@@ -86,12 +86,14 @@ namespace Cotecna.Domain.Core
 
         public async Task<TResult> DispatchAsync<TResult>(Command<TResult> command)
         {
-            Type type = typeof(IAsyncCommandHandler<>);
-            Type[] typeArgs = { command.GetType() };
+            Type type = typeof(IAsyncCommandHandler<,>);
+            Type[] typeArgs = { command.GetType(), typeof(TResult) };
             Type handlerType = type.MakeGenericType(typeArgs);
 
             dynamic handler = _provider.GetService(handlerType);
-            return await handler.HandleAsync<TResult>((dynamic)command);
+            TResult result = await handler.HandleAsync((dynamic)command);
+
+            return result;
         }
 
         public T Dispatch<T>(Query<T> query)
