@@ -1,5 +1,4 @@
-﻿
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 
 namespace Cotecna.Domain.Core
 {
@@ -8,6 +7,7 @@ namespace Cotecna.Domain.Core
     /// </summary>
     public static class IServiceCollectionExtensions
     {
+
         /// <summary>
         /// Adds ApplicationMediator to the current Dependency Injection container
         /// </summary>
