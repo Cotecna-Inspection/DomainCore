@@ -39,7 +39,7 @@ For CQRS implementation examples, using commands or queries, check the examples 
   services
     .AddMediator()
     //More handlers here
-    .AddAsyncHandler<Query, AsyncQueryHandler, string>();
+    .AddAsyncQueryHandler<Query, AsyncQueryHandler, string>();
   ```
   
 ### Quick commands overview
@@ -51,7 +51,7 @@ For CQRS implementation examples, using commands or queries, check the examples 
       public string Test { get; set; }
   }
   ```
-2. Create a query handler class, implementing IQueryHandler<TQuery, TResult> or IAsyncQueryHandler<TQuery, TResult> where TQuery is the class created above and TResult the objet to be sent back.
+2. Create a command handler class, implementing ICommandHandler<TCommand>, IAsyncCommandHandler<TCommand, TResult> or IAsyncCommandHandler<TCommand, TResult> where TCommand is the class created above and TResult the objet to be sent back if required.
   ```csharp
   public class AsyncCommandHandler : IAsyncCommandHandler<TestCommand>
   {
@@ -69,7 +69,7 @@ For CQRS implementation examples, using commands or queries, check the examples 
   services
     .AddMediator()
     //More handlers here
-    .AddAsyncHandler<TestCommand, AsyncCommandHandler>();
+    .AddAsyncCommandHandler<TestCommand, AsyncCommandHandler>();
   ```
   
 ### Invoke handlers from IApplicationMediator
