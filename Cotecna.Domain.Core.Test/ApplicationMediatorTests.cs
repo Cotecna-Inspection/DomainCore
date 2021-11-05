@@ -15,10 +15,10 @@ namespace Cotecna.Domain.Core.Test
             services
                 .AddMediator()
                 .AddCommandHandler<TestCommand, CommandHandler>()
-                .AddCommandAsyncHandler<AsyncTestCommand, AsyncCommandHandler>()
-                .AddCommandAsyncHandler<AsyncTestCommandString,AsyncCommandHandlerString,string>()
+                .AddAsyncCommandHandler<AsyncTestCommand, AsyncCommandHandler>()
+                .AddAsyncCommandHandler<AsyncTestCommandString,AsyncCommandHandlerString,string>()
                 .AddQueryHandler<Query, QueryHandler, string>()
-                .AddQueryAsyncHandler<AsyncQuery, AsyncQueryHandler, string>();
+                .AddAsyncQueryHandler<AsyncQuery, AsyncQueryHandler, string>();
 
             var serviceProvider = services.BuildServiceProvider();
 
