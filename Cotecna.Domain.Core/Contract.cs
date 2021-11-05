@@ -5,6 +5,7 @@
     /// </summary>
     public static class Contract
     {
+
         /// <summary>
         /// Specify the requireness of an invariant condition to be met. Throws <see cref="ContractException"/>
         /// </summary>

@@ -6,6 +6,8 @@
     /// </summary>
     public abstract class Command { }
 
+
+
     /// <summary>
     /// Represents a <see cref="Command"/>
     /// </summary>

@@ -30,18 +30,18 @@ namespace Cotecna.Domain.Core
         Task<TResult> DispatchAsync<TResult>(Command<TResult> command);
 
         /// <summary>
-        /// Dispatches <see cref="Query{T}"/> objects Synchronously
+        /// Dispatches <see cref="Query{TResult}"/> objects Synchronously
         /// </summary>
         /// <param name="query"> <see cref="Query{T}"/> object to be dispatched</param>
-        /// <returns>Result <see cref="{T}"/> object</returns>
-        T Dispatch<T>(Query<T> query);
+        /// <returns>Result <see cref="{TResult}"/> object</returns>
+        TResult Dispatch<TResult>(Query<TResult> query);
 
         /// <summary>
-        /// Dispatches <see cref="Query{T}"/> objects Asynchronously
+        /// Dispatches <see cref="Query{TResult}"/> objects Asynchronously
         /// </summary>
-        /// <param name="query"> <see cref="Query{T}"/> object to be dispatched</param>
-        /// <returns>Result <see cref="Task{T}"/> object</returns>
-        Task<T> DispatchAsync<T>(Query<T> query);
+        /// <param name="query"> <see cref="Query{TResult}"/> object to be dispatched</param>
+        /// <returns>Result <see cref="Task{TResult}"/> object</returns>
+        Task<TResult> DispatchAsync<TResult>(Query<TResult> query);
         
     }
 
@@ -53,6 +53,7 @@ namespace Cotecna.Domain.Core
     {
 
         private readonly IServiceProvider _provider;
+
 
         /// <summary>
         /// Initializes a new instance of the <see cref="IApplicationMediator"/> class.
@@ -96,26 +97,26 @@ namespace Cotecna.Domain.Core
             return result;
         }
 
-        public T Dispatch<T>(Query<T> query)
+        public TResult Dispatch<TResult>(Query<TResult> query)
         {
             Type type = typeof(IQueryHandler<,>);
-            Type[] typeArgs = { query.GetType(), typeof(T) };
+            Type[] typeArgs = { query.GetType(), typeof(TResult) };
             Type handlerType = type.MakeGenericType(typeArgs);
 
             dynamic handler = _provider.GetService(handlerType);
-            T result = handler.Handle((dynamic)query);
+            TResult result = handler.Handle((dynamic)query);
 
             return result;
         }
 
-        public async Task<T> DispatchAsync<T>(Query<T> query)
+        public async Task<TResult> DispatchAsync<TResult>(Query<TResult> query)
         {
             Type type = typeof(IAsyncQueryHandler<,>);
-            Type[] typeArgs = { query.GetType(), typeof(T) };
+            Type[] typeArgs = { query.GetType(), typeof(TResult) };
             Type handlerType = type.MakeGenericType(typeArgs);
 
             dynamic handler = _provider.GetService(handlerType);
-            T result = await handler.HandleAsync((dynamic)query);
+            TResult result = await handler.HandleAsync((dynamic)query);
 
             return result;
         }
