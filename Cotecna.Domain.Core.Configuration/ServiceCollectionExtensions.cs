@@ -39,7 +39,7 @@ namespace Cotecna.Domain.Core
         /// </summary>
         /// <param name="services">Services Dependency Injection Container</param>
         /// <returns>Same Services Dependency Injection Container</returns>
-        public static IServiceCollection AddCommandAsyncHandler<TCommand, THandler>(this IServiceCollection services)
+        public static IServiceCollection AddAsyncCommandHandler<TCommand, THandler>(this IServiceCollection services)
             where THandler : class, IAsyncCommandHandler<TCommand>
             where TCommand : Command
         {
@@ -53,7 +53,7 @@ namespace Cotecna.Domain.Core
         /// </summary>
         /// <param name="services">Services Dependency Injection Container</param>
         /// <returns>Same Services Dependency Injection Container</returns>
-        public static IServiceCollection AddCommandAsyncHandler<TCommand, THandler, TResult>(this IServiceCollection services)
+        public static IServiceCollection AddAsyncCommandHandler<TCommand, THandler, TResult>(this IServiceCollection services)
             where THandler : class, IAsyncCommandHandler<TCommand, TResult>
             where TCommand : Command<TResult>
         {
@@ -81,7 +81,7 @@ namespace Cotecna.Domain.Core
         /// </summary>
         /// <param name="services">Services Dependency Injection Container</param>
         /// <returns>Same Services Dependency Injection Container</returns>
-        public static IServiceCollection AddQueryAsyncHandler<TQuery, THandler, TResult>(this IServiceCollection services)
+        public static IServiceCollection AddAsyncQueryHandler<TQuery, THandler, TResult>(this IServiceCollection services)
             where THandler : class, IAsyncQueryHandler<TQuery, TResult>
             where TQuery : Query<TResult>
         {
