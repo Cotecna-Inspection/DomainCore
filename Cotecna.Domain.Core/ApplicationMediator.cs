@@ -22,6 +22,12 @@ namespace Cotecna.Domain.Core
         /// <param name="command"><see cref="Command"/> object to be dispatched</param>
         Task DispatchAsync(Command command);
 
+        /// <summary>
+        /// Dispatches <see cref="Command"/> objects Synchronously
+        /// </summary>
+        /// <param name="command"><see cref="Command"/> object to be dispatched</param>
+        /// <returns>Result <see cref="Task{TResult}"/> object</returns>
+        Task<TResult> DispatchAsync<TResult>(Command<TResult> command);
 
         /// <summary>
         /// Dispatches <see cref="Query{T}"/> objects Synchronously
@@ -36,13 +42,7 @@ namespace Cotecna.Domain.Core
         /// <param name="query"> <see cref="Query{T}"/> object to be dispatched</param>
         /// <returns>Result <see cref="Task{T}"/> object</returns>
         Task<T> DispatchAsync<T>(Query<T> query);
-
-        /// <summary>
-        /// Dispatches <see cref="Command"/> objects Synchronously
-        /// </summary>
-        /// <param name="command"><see cref="Command"/> object to be dispatched</param>
-        /// <returns>Result <see cref="Task{T}"/> object</returns>
-        Task<T> DispatchAsync<T>(Command command);
+        
     }
 
 
@@ -84,6 +84,18 @@ namespace Cotecna.Domain.Core
             await handler.HandleAsync((dynamic)command);
         }
 
+        public async Task<TResult> DispatchAsync<TResult>(Command<TResult> command)
+        {
+            Type type = typeof(IAsyncCommandHandler<,>);
+            Type[] typeArgs = { command.GetType(), typeof(TResult) };
+            Type handlerType = type.MakeGenericType(typeArgs);
+
+            dynamic handler = _provider.GetService(handlerType);
+            TResult result = await handler.HandleAsync((dynamic)command);
+
+            return result;
+        }
+
         public T Dispatch<T>(Query<T> query)
         {
             Type type = typeof(IQueryHandler<,>);
@@ -107,15 +119,6 @@ namespace Cotecna.Domain.Core
 
             return result;
         }
-
-        public async Task<T> DispatchAsync<T>(Command command)
-        {
-            Type type = typeof(IAsyncCommandHandler<>);
-            Type[] typeArgs = { command.GetType() };
-            Type handlerType = type.MakeGenericType(typeArgs);
-
-            dynamic handler = _provider.GetService(handlerType);
-            return await handler.HandleAsync<T>((dynamic)command);
-        }
+        
     }
 }

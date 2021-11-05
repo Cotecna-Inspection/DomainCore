@@ -25,7 +25,7 @@ namespace Cotecna.Domain.Core
         /// </summary>
         /// <param name="services">Services Dependency Injection Container</param>
         /// <returns>Same Services Dependency Injection Container</returns>
-        public static IServiceCollection AddHandler<TCommand, THandler>(this IServiceCollection services)
+        public static IServiceCollection AddCommandHandler<TCommand, THandler>(this IServiceCollection services)
             where THandler : class, ICommandHandler<TCommand>
             where TCommand : Command
         {
@@ -39,7 +39,7 @@ namespace Cotecna.Domain.Core
         /// </summary>
         /// <param name="services">Services Dependency Injection Container</param>
         /// <returns>Same Services Dependency Injection Container</returns>
-        public static IServiceCollection AddAsyncHandler<TCommand, THandler>(this IServiceCollection services)
+        public static IServiceCollection AddCommandAsyncHandler<TCommand, THandler>(this IServiceCollection services)
             where THandler : class, IAsyncCommandHandler<TCommand>
             where TCommand : Command
         {
@@ -49,11 +49,25 @@ namespace Cotecna.Domain.Core
         }
 
         /// <summary>
+        /// Adds a new Asynchronous Command Handler with the specified Query to the current Services Dependency Injection Container, easing configuration and promoting fluent syntax
+        /// </summary>
+        /// <param name="services">Services Dependency Injection Container</param>
+        /// <returns>Same Services Dependency Injection Container</returns>
+        public static IServiceCollection AddCommandAsyncHandler<TCommand, THandler, TResult>(this IServiceCollection services)
+            where THandler : class, IAsyncCommandHandler<TCommand, TResult>
+            where TCommand : Command<TResult>
+        {
+            services.AddTransient<IAsyncCommandHandler<TCommand, TResult>, THandler>();
+
+            return services;
+        }
+
+        /// <summary>
         /// Adds a new Syncronous Query Handler with the specified Query to the current Services Dependency Injection Container, easing configuration and promoting fluent syntax
         /// </summary>
         /// <param name="services">Services Dependency Injection Container</param>
         /// <returns>Same Services Dependency Injection Container</returns>
-        public static IServiceCollection AddHandler<TQuery, THandler, TResult>(this IServiceCollection services)
+        public static IServiceCollection AddQueryHandler<TQuery, THandler, TResult>(this IServiceCollection services)
             where THandler : class, IQueryHandler<TQuery, TResult>
             where TQuery : Query<TResult>
         {
@@ -67,14 +81,14 @@ namespace Cotecna.Domain.Core
         /// </summary>
         /// <param name="services">Services Dependency Injection Container</param>
         /// <returns>Same Services Dependency Injection Container</returns>
-        public static IServiceCollection AddAsyncHandler<TQuery, THandler, TResult>(this IServiceCollection services)
+        public static IServiceCollection AddQueryAsyncHandler<TQuery, THandler, TResult>(this IServiceCollection services)
             where THandler : class, IAsyncQueryHandler<TQuery, TResult>
             where TQuery : Query<TResult>
         {
             services.AddTransient<IAsyncQueryHandler<TQuery, TResult>, THandler>();
 
             return services;
-        }
+        }        
 
     }
 }

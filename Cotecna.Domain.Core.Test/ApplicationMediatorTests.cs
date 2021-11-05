@@ -14,10 +14,11 @@ namespace Cotecna.Domain.Core.Test
 
             services
                 .AddMediator()
-                .AddHandler<TestCommand, CommandHandler>()
-                .AddAsyncHandler<AsyncTestCommand, AsyncCommandHandler>()
-                .AddHandler<Query, QueryHandler, string>()
-                .AddAsyncHandler<AsyncQuery, AsyncQueryHandler, string>();
+                .AddCommandHandler<TestCommand, CommandHandler>()
+                .AddCommandAsyncHandler<AsyncTestCommand, AsyncCommandHandler>()
+                .AddCommandAsyncHandler<AsyncTestCommandString,AsyncCommandHandlerString,string>()
+                .AddQueryHandler<Query, QueryHandler, string>()
+                .AddQueryAsyncHandler<AsyncQuery, AsyncQueryHandler, string>();
 
             var serviceProvider = services.BuildServiceProvider();
 
@@ -51,6 +52,20 @@ namespace Cotecna.Domain.Core.Test
 
             // Assert
             Assert.Equal("Test of asynchronous command", AsyncCommandHandler.TestResult);
+        }
+
+        [Fact]
+        public async Task Given_ApplicationMediator_When_AsyncCommandRequested_Then_ItShouldReturnValue()
+        {
+
+            // Arrange
+            var command = new AsyncTestCommandString { Test = "Test of asynchronous query" };
+
+            // Act
+            var result = await mediator.DispatchAsync(command);
+
+            // Assert
+            Assert.Equal("Test of asynchronous query", result);
         }
 
         [Fact]
