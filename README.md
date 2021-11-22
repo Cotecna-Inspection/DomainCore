@@ -7,6 +7,8 @@ The intention of the project is to create code without third-party dependencies,
 
 ## Getting started
 
+### .Net NuGet package
+
 1. Install Domain package at your Domain layer: 
     > Install-Package Cotecna.Domain.Core
 2. Install Configuration pacakge at your API or frontier layer
@@ -15,7 +17,7 @@ The intention of the project is to create code without third-party dependencies,
 
 For CQRS implementation examples, using commands or queries, check the examples provided [here](https://github.com/Cotecna-Inspection/Domain.Core/tree/main/Cotecna.Domain.Core.Test)
 
-### Queries quick overview:
+#### Queries quick overview:
 1. Create a query class, inheriting from Query<TResult> where TResult is the class that will be sent back.
   ```csharp
   public class Query : Query<string>
@@ -42,7 +44,7 @@ For CQRS implementation examples, using commands or queries, check the examples 
     .AddAsyncQueryHandler<Query, AsyncQueryHandler, string>();
   ```
   
-### Quick commands overview
+#### Quick commands overview
 
 1. Create a command class, inheriting from Command
   ```csharp
@@ -72,7 +74,7 @@ For CQRS implementation examples, using commands or queries, check the examples 
     .AddAsyncCommandHandler<TestCommand, AsyncCommandHandler>();
   ```
   
-### Invoke handlers from IApplicationMediator
+#### Invoke handlers from IApplicationMediator
 In every scenario, what will be required is to inject IApplicationMediator in your application or services layer, and then call Dispatch methods (overloaded) for both cases:
   ```csharp
   var result = mediator.DispatchAsync(query);
@@ -84,6 +86,69 @@ In every scenario, what will be required is to inject IApplicationMediator in yo
   ```
   
 Additionally, synchronous handlers are allowed, so no need to do it async
+
+
+## TypeScript npm package
+
+This package tries to follow the principle of task-based UI, aligned with CQRS pattern at the backend level.
+
+1. Install Domain package at your Domain layer: 
+    > npm i @cotecna/domain-core
+	
+2. The package exposes basic query and command interfaces, as well as their respective handlers that must be implemented in the services exposing only the invokeQuery and/or invoqueCommand methods
+
+	```javascript
+	
+	// Example command
+	export class ExampleCommand implements Command
+	{
+		test: string;
+	}
+	
+	// Example query
+	export class ExampleQuery implements Query
+	{
+		test: string;
+	}
+	
+	
+	// Example service in Angular
+	
+	@Injectable({
+	  providedIn: 'root'
+	})
+	export class ExampleService implements QueryHandler, CommandHandler {
+
+		// Subscriptions, variables, etc goes here
+
+
+		constructor(private httpClient: HttpClient) { }
+
+
+		public invokeCommand<TCommand extends Command>(command: TCommand): Promise<InvokeResult> {
+			switch(command.constructor) {
+				case ExampleCommand:
+					return this.invokeExampleCommand(command); // Private method implemented in this class
+				//More commands handling here...
+				default:
+					throw new Error("Command not allowed");
+			}
+		}
+	  
+		public async invokeQuery<TQuery extends Query>(query: TQuery): Promise<InvokeResult> {
+			switch(query.constructor) {
+				case ExampleQuery:
+					return this.invokeExampleQuery(query); // Private method implemented in this class
+				//More queries handling here...
+				default:
+					throw new Error("Query not allowed");
+			}
+		}
+	}
+
+  // Private methods implementation goes here, data logic remains in the service
+
+	```
   
   
 _Thanks for using, do not hesitate to contribute_
