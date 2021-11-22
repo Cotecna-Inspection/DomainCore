@@ -1,7 +1,7 @@
 {
   "name": "@cotecna/domain-core",
   "version": "1.0.0-beta.1",
-  "description": "Common requirements for front-end projects following Task-based principles aligned with CQRS pattern",
+  "description": "Common requirements for front-end projects following task-based UI principles aligned with CQRS pattern",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
