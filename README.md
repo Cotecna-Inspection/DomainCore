@@ -120,7 +120,7 @@ This package tries to follow the principle of task-based UI, aligned with CQRS p
 	export class ExampleService implements QueryHandler, CommandHandler {
 
 		// Subscriptions, variables, etc goes here
-
+    ///
 
 		constructor(private httpClient: HttpClient) { }
 
@@ -144,12 +144,12 @@ This package tries to follow the principle of task-based UI, aligned with CQRS p
 					throw new Error("Query not allowed");
 			}
 		}
+
+    // Private methods implementation goes here, data logic remains in the service
+    ///
+
 	}
-
-  // Private methods implementation goes here, data logic remains in the service
-
-	```
+  ```
   
   
 _Thanks for using, do not hesitate to contribute_
-  
