@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.1;net5.0</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.1;net5.0;net6.0;</TargetFrameworks>
     <PackageId>Cotecna.Domain.Core</PackageId>
     <AssemblyName>Cotecna.Domain.Core</AssemblyName>
     <RootNamespace>Cotecna.Domain.Core</RootNamespace>
@@ -10,9 +10,9 @@
     <Authors>Cotecna Inspection</Authors>
     <Company>Cotecna Inspection</Company>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
-    <Version>1.3.0</Version>
-    <FileVersion>1.3.0</FileVersion>
-    <AssemblyVersion>1.3.0</AssemblyVersion>
+    <Version>1.4.0</Version>
+    <FileVersion>1.4.0</FileVersion>
+    <AssemblyVersion>1.4.0</AssemblyVersion>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/Cotecna-Inspection/Domain.Core</PackageProjectUrl>    
     <PackageReleaseNotes>https://github.com/Cotecna-Inspection/Domain.Core/changelog.md</PackageReleaseNotes>
