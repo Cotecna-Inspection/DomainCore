@@ -9,7 +9,7 @@
         /// <summary>
         /// Specify the requireness of an invariant condition to be met. Throws <see cref="ContractException"/>
         /// </summary>
-        /// <param name="precondition">Pre-Condition to met</param>
+        /// <param name="precondition">Pre-Condition to be met</param>
         /// <param name="message">Message to show when the invariant has not been met. Optional. Default as Empty</param>
         public static void Require(bool precondition, string message = "")
         {

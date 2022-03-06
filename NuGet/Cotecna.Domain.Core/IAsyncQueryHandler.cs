@@ -5,7 +5,7 @@ namespace Cotecna.Domain.Core
 
     /// <summary>
     /// Defines an Asynchronous Handler for Queries.
-    /// Represents <see cref="IQueryHandler{TQuery, TResult}"/> Injectable Service Interface
+    /// Represents a <see cref="IQueryHandler{TQuery, TResult}"/> Injectable Service Interface
     /// </summary>
     /// <typeparam name="TQuery">The type of query object being handled</typeparam>
     /// <typeparam name="TResult">The type of result object from the handler</typeparam>
