@@ -6,7 +6,7 @@
     <AssemblyName>Cotecna.Domain.Core</AssemblyName>
     <RootNamespace>Cotecna.Domain.Core</RootNamespace>
     <Description>Common requirements for .NET projects at Domain layer</Description>
-    <Copyright>Cotecna Inspection (c) 2021</Copyright>
+    <Copyright>Cotecna Inspection (c) 2022</Copyright>
     <Authors>Cotecna Inspection</Authors>
     <Company>Cotecna Inspection</Company>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
