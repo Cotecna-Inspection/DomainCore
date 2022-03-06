@@ -4,4 +4,4 @@ This document contains the historical changes of the **Cotecna.Domain.Core*** (C
 ## [1.4.0] - 2022-03-06
 ### Added
 - Supports .NET 6
-- Adds Missing ChangeLog File
+- Adds Missing Release Notes (changelog) File
