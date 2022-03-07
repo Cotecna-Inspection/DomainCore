@@ -2,7 +2,7 @@
 {
     /// <summary>
     /// Defines a Synchronous Handler for Commands.
-    /// Represents <see cref="ICommandHandler{TCommand}"/> Injectable Service Interface
+    /// Represents a <see cref="ICommandHandler{TCommand}"/> Injectable Service Interface
     /// </summary>
     /// <typeparam name="TCommand">Type of the command being handled</typeparam>
     public interface ICommandHandler<TCommand>

@@ -5,7 +5,7 @@ namespace Cotecna.Domain.Core
 {
     /// <summary>
     /// Defines a mediator to encapsulate <see cref="Command"/> and <see cref="Query{T}"/> objects.
-    /// Represents <see cref="IApplicationMediator"/> Injectable Service Interface
+    /// Represents a <see cref="IApplicationMediator"/> Injectable Service Interface
     /// </summary>
     public interface IApplicationMediator
     {

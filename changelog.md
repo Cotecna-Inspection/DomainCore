@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Releases]
 
+
+## [1.4.0] - 2022-03-06
+### Added
+Supports .NET 6
+
 ## [1.0.0] - 2021-10-04
 ### Added
 - ICommand and IQuery interfaces

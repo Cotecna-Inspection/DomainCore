@@ -3,7 +3,7 @@
 namespace Cotecna.Domain.Core
 {
     /// <summary>
-    /// Represents <see cref="IServiceCollectionExtensions"/> defining as a container for Services added through Dependency Injection.
+    /// Represents a <see cref="IServiceCollectionExtensions"/> defining as a container for Services added through Dependency Injection.
     /// </summary>
     public static class IServiceCollectionExtensions
     {

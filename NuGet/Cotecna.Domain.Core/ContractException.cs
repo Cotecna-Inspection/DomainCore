@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace Cotecna.Domain.Core
 {
     /// <summary>
-    /// Represents a Serializable <see cref="ContractException"/> for a contract invariant that has not been complied. Inherirts from <see cref="Exception"/>
+    /// Represents a Serializable <see cref="ContractException"/> for a contract invariant that has not been complied. Inherits from <see cref="Exception"/>
     /// </summary>
     [Serializable]
     public class ContractException : Exception

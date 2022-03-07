@@ -1,21 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.1;net5.0</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.1;net5.0;net6.0;</TargetFrameworks>
     <PackageId>Cotecna.Domain.Core</PackageId>
     <AssemblyName>Cotecna.Domain.Core</AssemblyName>
     <RootNamespace>Cotecna.Domain.Core</RootNamespace>
     <Description>Common requirements for .NET projects at Domain layer</Description>
-    <Copyright>Cotecna Inspection (c) 2021</Copyright>
+    <Copyright>Cotecna Inspection (c) 2022</Copyright>
     <Authors>Cotecna Inspection</Authors>
     <Company>Cotecna Inspection</Company>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
-    <Version>1.3.0</Version>
-    <FileVersion>1.3.0</FileVersion>
-    <AssemblyVersion>1.3.0</AssemblyVersion>
+    <Version>1.4.0</Version>
+    <FileVersion>1.4.0</FileVersion>
+    <AssemblyVersion>1.4.0</AssemblyVersion>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/Cotecna-Inspection/Domain.Core</PackageProjectUrl>    
-    <PackageReleaseNotes>https://github.com/Cotecna-Inspection/Domain.Core/changelog.md</PackageReleaseNotes>
+    <PackageReleaseNotes>https://github.com/Cotecna-Inspection/Domain.Core/blob/main/changelog.md</PackageReleaseNotes>
     <RepositoryUrl>https://github.com/Cotecna-Inspection/Domain.Core.git</RepositoryUrl>
     <RepositoryType>GIT</RepositoryType>
     <PackageTags>Utilities;Helpers;Common;Core;DDD;Domain</PackageTags>    

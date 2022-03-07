@@ -9,7 +9,7 @@
 
 
     /// <summary>
-    /// Represents a <see cref="Command"/>
+    /// Represents a <see cref="Command{TResult}"/>
     /// </summary>
     public abstract class Command<TResult> { }
 
