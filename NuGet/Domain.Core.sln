@@ -1,13 +1,24 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31702.278
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cotecna.Domain.Core", "Cotecna.Domain.Core\Cotecna.Domain.Core.csproj", "{7553CE0A-7545-40A8-8A13-D9C873F932F2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cotecna.Domain.Core.Configuration", "Cotecna.Domain.Core.Configuration\Cotecna.Domain.Core.Configuration.csproj", "{14E6FAE8-1967-4953-AD1E-4BA300C00421}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cotecna.Domain.Core.Test", "Cotecna.Domain.Core.Test\Cotecna.Domain.Core.Test.csproj", "{41BBDC64-7B8E-497D-8498-73A7D984B555}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cotecna.Domain.Core.Test", "Cotecna.Domain.Core.Test\Cotecna.Domain.Core.Test.csproj", "{41BBDC64-7B8E-497D-8498-73A7D984B555}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Documentation", "3. Documentation", "{D2D30F36-4FCD-47B7-A4CB-DAA67D226EC3}"
+	ProjectSection(SolutionItems) = preProject
+		..\changelog.md = ..\changelog.md
+		..\LICENSE = ..\LICENSE
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. NuGet", "1. NuGet", "{F69322BC-C219-4619-A74C-4DAF6E3AEC4D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Testing", "2. Testing", "{12A66A86-6010-46FF-9D49-A3C5E47A6CA6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +41,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7553CE0A-7545-40A8-8A13-D9C873F932F2} = {F69322BC-C219-4619-A74C-4DAF6E3AEC4D}
+		{14E6FAE8-1967-4953-AD1E-4BA300C00421} = {F69322BC-C219-4619-A74C-4DAF6E3AEC4D}
+		{41BBDC64-7B8E-497D-8498-73A7D984B555} = {12A66A86-6010-46FF-9D49-A3C5E47A6CA6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {52A61A2B-F848-4CE2-95D2-579D26E2AFF0}
