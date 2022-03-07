@@ -20,10 +20,5 @@
     <RepositoryType>GIT</RepositoryType>
     <PackageTags>Utilities;Helpers;Common;Core;DDD;Domain</PackageTags>    
   </PropertyGroup>
-
-
-  <ItemGroup>
-    <None Include="..\LICENSE" Pack="true" PackagePath="" />
-  </ItemGroup>
   
 </Project>

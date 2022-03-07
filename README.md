@@ -9,6 +9,13 @@ The intention of the project is to create code without third-party dependencies,
 
 ### .Net NuGet package
 
+![Nuget](https://img.shields.io/nuget/v/Cotecna.Domain.Core?label=Cotecna.Domain.Core&style=for-the-badge) ![Nuget](https://img.shields.io/nuget/v/Cotecna.Domain.Core.Configuration?label=Cotecna.Domain.Core.Configuration&style=for-the-badge)
+
+Target frameworks:
+- .NET Core 3.1
+- .NET 5.0
+- .NET 6.0
+
 1. Install Domain package at your Domain layer: 
     > Install-Package Cotecna.Domain.Core
 2. Install Configuration pacakge at your API or frontier layer
@@ -149,7 +156,6 @@ This package tries to follow the principle of task-based UI, aligned with CQRS p
     ///
 
 	}
-  ```
-  
-  
-_Thanks for using, do not hesitate to contribute_
+    ```
+
+  _Thanks for using, do not hesitate to contribute_
