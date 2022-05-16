@@ -6,7 +6,7 @@ import { Command, InvokeResult } from ".";
 export interface CommandHandler {
 
 /**
- * Handles a Command (Creation, Updating or Deletion) Asynchronously
+ * Handles a Command (Creation, Updating or Deletion Task) Asynchronously
  * @param command  Command to be invoked
  * @returns Result of the Command as Asynchronous Promise
  */

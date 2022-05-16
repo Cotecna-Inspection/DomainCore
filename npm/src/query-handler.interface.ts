@@ -6,7 +6,7 @@ import { Query, InvokeResult } from ".";
 export interface QueryHandler {
 
 /**
- * Handles a Query (Read Operation) Asynchronously
+ * Handles a Query (Read Task) Asynchronously
  * @param query  Query to be invoked
  * @returns Result of the Query as Asynchronous Promise
  */

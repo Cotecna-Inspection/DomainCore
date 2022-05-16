@@ -1,4 +1,4 @@
 /**
- *  Defines a Query (Reading) Operation Interface
+ *  Defines a Query (Reading) Task Interface
  */
 export interface Query { }
