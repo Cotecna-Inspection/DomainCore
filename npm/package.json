@@ -1,6 +1,6 @@
 {
   "name": "@cotecna/domain-core",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "description": "Common requirements for front-end projects following task-based UI principles aligned with CQRS pattern",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
