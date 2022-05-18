@@ -9,7 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.4.0] - 2022-05-16
 ### Added
  - Updates Dependencies for .NET Core 3.1
- - Updates Changelog Files for each Project separatelly
+
+### Changed
+ - Adds Specific Changelog Files for the Project
 
 ## [1.3.0] - 2021-11-05
 ### Added (Coupled with Cotecna.Domain.Core  [1.3.0])
