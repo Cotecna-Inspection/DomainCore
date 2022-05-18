@@ -6,8 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Releases]
 
-## [1.4.0] -  2022-05-16
-### Added (Coupled with Cotecna.Domain.Core [1.4.0])
+## [1.4.0] - 2022-05-16
+### Added
  - Updates Dependencies for .NET Core 3.1
  - Updates Dependencies for Unit Tests on .NET 6
  - Adds Changelog Files for each Project separatelly
