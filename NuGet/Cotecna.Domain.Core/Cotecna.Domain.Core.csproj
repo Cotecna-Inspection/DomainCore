@@ -10,12 +10,12 @@
 		<Authors>Cotecna Inspection</Authors>
 		<Company>Cotecna Inspection</Company>
 		<RestoreProjectStyle>PackageReference</RestoreProjectStyle>
-		<Version>1.4.0</Version>
-		<FileVersion>1.4.0</FileVersion>
-		<AssemblyVersion>1.4.0</AssemblyVersion>
+		<Version>1.4.1</Version>
+		<FileVersion>1.4.1</FileVersion>
+		<AssemblyVersion>1.4.1</AssemblyVersion>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<PackageProjectUrl>https://github.com/Cotecna-Inspection/Domain.Core</PackageProjectUrl>
-		<PackageReleaseNotes>https://github.com/Cotecna-Inspection/Domain.Core/tree/main/NuGet/Cotecna.Domain.Core/blob/main/changelog.md</PackageReleaseNotes>
+		<PackageReleaseNotes>https://github.com/Cotecna-Inspection/Domain.Core/blob/main/NuGet/Cotecna.Domain.Core.Configuration/changelog.md</PackageReleaseNotes>
 		<RepositoryUrl>https://github.com/Cotecna-Inspection/Domain.Core.git</RepositoryUrl>
 		<RepositoryType>GIT</RepositoryType>
 		<PackageTags>Utilities;Helpers;Common;Core;DDD;Domain</PackageTags>
