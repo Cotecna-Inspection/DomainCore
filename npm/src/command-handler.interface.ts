@@ -1,7 +1,7 @@
 import { Command, InvokeResult } from ".";
 
 /**
- * Defines a Synchronous Handler for Commands.
+ * Defines a Asynchronous Handler for Commands.
  */
 export interface CommandHandler {
 

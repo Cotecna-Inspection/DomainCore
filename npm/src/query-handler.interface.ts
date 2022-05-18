@@ -1,7 +1,7 @@
 import { Query, InvokeResult } from ".";
 
 /**
- *  Defines a Synchronous Handler for Queries.
+ *  Defines a Asynchronous Handler for Queries.
  */
 export interface QueryHandler {
 
