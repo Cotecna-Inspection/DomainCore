@@ -10,9 +10,9 @@
 		<Authors>Cotecna Inspection</Authors>
 		<Company>Cotecna Inspection</Company>
 		<RestoreProjectStyle>PackageReference</RestoreProjectStyle>
-		<Version>1.4.1</Version>
-		<FileVersion>1.4.1</FileVersion>
-		<AssemblyVersion>1.4.1</AssemblyVersion>
+		<Version>1.5.1</Version>
+		<FileVersion>1.5.0</FileVersion>
+		<AssemblyVersion>1.5.0</AssemblyVersion>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<PackageProjectUrl>https://github.com/Cotecna-Inspection/Domain.Core</PackageProjectUrl>
 		<PackageReleaseNotes>https://github.com/Cotecna-Inspection/Domain.Core/blob/main/NuGet/Cotecna.Domain.Core.Configuration/changelog.md</PackageReleaseNotes>
@@ -22,7 +22,7 @@
 	</PropertyGroup>
 
 	<ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.1' ">
-		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.25" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.27" />
 	</ItemGroup>
 
 	<ItemGroup Condition=" '$(TargetFramework)' == 'net5.0' ">
