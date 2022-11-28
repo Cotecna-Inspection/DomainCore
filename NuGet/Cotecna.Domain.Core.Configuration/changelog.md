@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Releases]
 
+## [1.5.0] - 2022-11-28
+### Added
+- Supports .NET 7
+
 ## [1.4.3] - 2022-08-16
 ### Changed
  - Updates Dependencies for .NET Core 3.1
