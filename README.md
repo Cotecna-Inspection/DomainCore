@@ -15,6 +15,7 @@ Target frameworks:
 - .NET Core 3.1
 - .NET 5.0
 - .NET 6.0
+- .NET 7.0
 
 1. Install Domain package at your Domain layer: 
     > Install-Package Cotecna.Domain.Core

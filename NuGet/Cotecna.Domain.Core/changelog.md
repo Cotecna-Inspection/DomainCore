@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Releases]
 
+## [1.5.0] - 2022-12-01
+### Added
+- Supports .NET 7
+
 ## [1.4.1] - 2022-05-22
 ### Fixed
 - Fixes Release Notes Urls on csproj Files
