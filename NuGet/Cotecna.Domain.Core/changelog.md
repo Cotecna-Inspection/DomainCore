@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Releases]
 
+## [2.0.0 - 2023-06-26
+### Removed
+- .NET Core 3.1 Support (https://devblogs.microsoft.com/dotnet/net-core-3-1-will-reach-end-of-support-on-december-13-2022/)
+- .NET 5 Support (https://devblogs.microsoft.com/dotnet/dotnet-5-end-of-support-update/)
+
 ## [1.5.1] - 2022-12-21
 ### Changed
  - Updates Dependecies for .NET Core 3.1
