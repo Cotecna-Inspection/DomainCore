@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Releases]
 
+## [3.0.0] - 2023-11-20
+### Added
+- Supports .NET 8
+
+
 ## [2.0.0] - 2023-06-28
 ### Removed
 - .NET Core 3.1 Support (https://devblogs.microsoft.com/dotnet/net-core-3-1-will-reach-end-of-support-on-december-13-2022/)
