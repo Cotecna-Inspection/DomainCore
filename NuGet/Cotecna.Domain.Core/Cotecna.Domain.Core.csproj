@@ -10,9 +10,9 @@
 		<Authors>Cotecna Inspection</Authors>
 		<Company>Cotecna Inspection</Company>
 		<RestoreProjectStyle>PackageReference</RestoreProjectStyle>
-		<Version>2.1.0</Version>
-		<FileVersion>2.1.0</FileVersion>
-		<AssemblyVersion>2.1.0</AssemblyVersion>
+		<Version>2.1.1</Version>
+		<FileVersion>2.1.1</FileVersion>
+		<AssemblyVersion>2.1.1</AssemblyVersion>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<PackageProjectUrl>https://github.com/Cotecna-Inspection/Domain.Core</PackageProjectUrl>
 		<PackageReleaseNotes>https://github.com/Cotecna-Inspection/Domain.Core/blob/main/NuGet/Cotecna.Domain.Core/changelog.md</PackageReleaseNotes>

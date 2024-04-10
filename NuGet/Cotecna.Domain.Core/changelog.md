@@ -6,10 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Releases]
 
+## [2.1.1] - 2024-04-1
+### Added
+ - Updates Dependecies for .NET 8
+
 ## [2.1.0] - 2023-11-21
 ### Added
 - Supports .NET 8
-
 
 ## [2.0.0] - 2023-06-28
 ### Removed
