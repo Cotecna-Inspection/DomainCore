@@ -8,7 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.1.1] - 2024-05-06
 ### Added
- - Updates Dependencies for .NET 8
+- Updates Dependencies for .NET 8
+- Marks as Obsolete One of the Constructors of Contract Exception (https://github.com/dotnet/docs/issues/34893)  
 
 ## [2.1.0] - 2023-11-21
 ### Added

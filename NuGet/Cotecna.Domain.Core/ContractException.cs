@@ -38,6 +38,7 @@ namespace Cotecna.Domain.Core
         /// </summary>
         /// <param name="info"><see cref="SerializationInfo"/> of the contract invariant not met</param>
         /// <param name="context"><see cref="StreamingContext"/> of the contract invariant not met</param>
+        [Obsolete("To be removed on a Future Version. Legacy serialization infrastructure APIs marked obsolete. See: https://github.com/dotnet/docs/issues/34893")]
         protected ContractException(SerializationInfo info,
                                     StreamingContext context)
             : base(info, context)

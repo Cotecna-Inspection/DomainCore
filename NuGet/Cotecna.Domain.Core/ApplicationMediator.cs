@@ -42,7 +42,7 @@ namespace Cotecna.Domain.Core
         /// <param name="query"> <see cref="Query{TResult}"/> object to be dispatched</param>
         /// <returns>Result <see cref="Task{TResult}"/> object</returns>
         Task<TResult> DispatchAsync<TResult>(Query<TResult> query);
-        
+
     }
 
 
@@ -68,7 +68,7 @@ namespace Cotecna.Domain.Core
         public void Dispatch(Command command)
         {
             Type type = typeof(ICommandHandler<>);
-            Type[] typeArgs = { command.GetType() };
+            Type[] typeArgs = [command.GetType()];
             Type handlerType = type.MakeGenericType(typeArgs);
 
             dynamic handler = _provider.GetService(handlerType);
@@ -78,7 +78,7 @@ namespace Cotecna.Domain.Core
         public async Task DispatchAsync(Command command)
         {
             Type type = typeof(IAsyncCommandHandler<>);
-            Type[] typeArgs = { command.GetType() };
+            Type[] typeArgs = [command.GetType()];
             Type handlerType = type.MakeGenericType(typeArgs);
 
             dynamic handler = _provider.GetService(handlerType);
@@ -88,7 +88,7 @@ namespace Cotecna.Domain.Core
         public async Task<TResult> DispatchAsync<TResult>(Command<TResult> command)
         {
             Type type = typeof(IAsyncCommandHandler<,>);
-            Type[] typeArgs = { command.GetType(), typeof(TResult) };
+            Type[] typeArgs = [command.GetType(), typeof(TResult)];
             Type handlerType = type.MakeGenericType(typeArgs);
 
             dynamic handler = _provider.GetService(handlerType);
@@ -100,7 +100,7 @@ namespace Cotecna.Domain.Core
         public TResult Dispatch<TResult>(Query<TResult> query)
         {
             Type type = typeof(IQueryHandler<,>);
-            Type[] typeArgs = { query.GetType(), typeof(TResult) };
+            Type[] typeArgs = [query.GetType(), typeof(TResult)];
             Type handlerType = type.MakeGenericType(typeArgs);
 
             dynamic handler = _provider.GetService(handlerType);
@@ -112,7 +112,7 @@ namespace Cotecna.Domain.Core
         public async Task<TResult> DispatchAsync<TResult>(Query<TResult> query)
         {
             Type type = typeof(IAsyncQueryHandler<,>);
-            Type[] typeArgs = { query.GetType(), typeof(TResult) };
+            Type[] typeArgs = [query.GetType(), typeof(TResult)];
             Type handlerType = type.MakeGenericType(typeArgs);
 
             dynamic handler = _provider.GetService(handlerType);
@@ -120,6 +120,6 @@ namespace Cotecna.Domain.Core
 
             return result;
         }
-        
+
     }
 }
