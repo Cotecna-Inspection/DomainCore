@@ -6,12 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Releases]
 
-## [3.0.0] - 2024-08-02
+## [3.0.0] - 2024-09-05
 ### Removed
 - .NET 7 Support (https://devblogs.microsoft.com/dotnet/dotnet-7-end-of-support/)
 
 ### Changed
- - Updates Dependecies for .NET 8
+ - Updates Dependencies for .NET 8
 
 ## [2.1.0] - 2023-11-21
 ### Added
