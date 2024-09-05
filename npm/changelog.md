@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Releases]
 
+## [2.0.0] - 2024-09-05
+### Changed
+- Package Dependencies. Includes:
+    - Mocha
+    - Chai
+    - JSDOM
+    - TS Node
+    - TypeScript
+
 ## [1.0.0] - 2021-11-23
 ### Added
 - Package Creation. Includes:
