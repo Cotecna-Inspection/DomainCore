@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Releases]
 
-## [3.0.0] - 2024-09-05
+## [3.0.0] - 2024-09-09
 ### Removed
 - .NET 7 Support (https://devblogs.microsoft.com/dotnet/dotnet-7-end-of-support/)
 
