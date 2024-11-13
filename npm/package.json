@@ -1,12 +1,12 @@
 {
   "name": "@cotecna/domain-core",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Common requirements for front-end projects following task-based UI principles aligned with CQRS pattern",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc -project tsconfig.json",
-    "test": "mocha -r ts-node/register -r jsdom-global/register 'tests/**/*.ts'"    
+    "test": "mocha -r ts-node/register -r jsdom-global/register 'tests/**/*.ts'"
   },
   "repository": {
     "type": "git",
@@ -26,13 +26,13 @@
     "access": "public"
   },
   "devDependencies": {
-    "@testdeck/mocha": "^0.1.2",
-    "chai": "^4.3.4",
-    "jsdom": "^16.5.3",
+    "@testdeck/mocha": "^0.3.3",
+    "chai": "^5.1.1",
+    "jsdom": "^25.0.0",
     "jsdom-global": "^3.0.2",
-    "mocha": "^8.3.2",
+    "mocha": "^10.7.3",
     "ts-mockito": "^2.6.1",
-    "ts-node": "^9.1.1",
-    "typescript": "^4.2.4"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
   }
 }

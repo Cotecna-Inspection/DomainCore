@@ -13,7 +13,7 @@ The intention of the project is to create code without third-party dependencies,
 
 Target frameworks:
 - .NET 6.0
-- .NET 7.0
+- .NET 8.0
 
 1. Install Domain package at your Domain layer: 
     > Install-Package Cotecna.Domain.Core
