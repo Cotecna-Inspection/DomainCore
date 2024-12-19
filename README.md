@@ -12,7 +12,9 @@ The intention of the project is to create code without third-party dependencies,
 ![Nuget](https://img.shields.io/nuget/v/Cotecna.Domain.Core?label=Cotecna.Domain.Core&style=for-the-badge) ![Nuget](https://img.shields.io/nuget/v/Cotecna.Domain.Core.Configuration?label=Cotecna.Domain.Core.Configuration&style=for-the-badge)
 
 Target frameworks:
-- .NET 6.0
+- .NET 3.1 (Obsolete)
+- .NET 5.0 (Obsolete)
+- .NET 6.0 (Obsolete)
 - .NET 8.0
 - .NET 9.0
 
