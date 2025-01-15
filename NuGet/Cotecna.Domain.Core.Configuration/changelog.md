@@ -6,6 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Releases]
 
+## [4.0.0] - 2025-01-15
+### Removed
+- .NET 6 Support (https://devblogs.microsoft.com/dotnet/dotnet-6-end-of-support/)
+
+
+## [3.1.0] - 2024-11-13
+### Added
+- Supports .NET 9
+
+
 ## [3.0.0] - 2024-09-09
 ### Removed
 - .NET 7 Support (https://devblogs.microsoft.com/dotnet/dotnet-7-end-of-support/)
